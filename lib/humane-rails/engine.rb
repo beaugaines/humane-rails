@@ -4,7 +4,7 @@ module HumaneRails
 
     initializer "humane-rails.action_controller" do |app|
       ActiveSupport.on_load :action_controller do
-        helper HumaneRails::FlashMessagesHelper
+        helper HumaneRails::FlashMessagesHelper if respond_to?(:helper)
       end
     end
 
